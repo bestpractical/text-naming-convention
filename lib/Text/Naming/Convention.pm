@@ -122,12 +122,25 @@ return the renamed one.
 
 if the convention is the same as the name, just return the name.
 
+if without arguments and $_ is defined and it's not a reference, renaming $_
+
 
 =cut
 
 sub renaming {
-    my $name        = shift;
-    my $option      = shift;
+
+    my ($name, $option);
+    if ( scalar @_ ) {
+        $name        = shift;
+        $option      = shift;
+    }
+    elsif ( defined $_ && ! ref $_ ) {
+        $name = $_;
+    }
+    else {
+        return
+    }
+
     my $convention  = $_default_convention;
 
     if ( $option && ref $option eq 'HASH' ) {
