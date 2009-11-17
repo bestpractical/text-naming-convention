@@ -17,6 +17,33 @@ my $_default_convention = '_';
 # lowerCamelCase.
 my $_default_keep_uppers = 1;
 
+=head1 NAME
+
+Text::Naming::Convention - Naming or Renaming( for identifiers, mostly )
+
+
+=head1 VERSION
+
+This document describes Text::Naming::Convention version 0.06
+
+
+=head1 SYNOPSIS
+
+    use Text::Naming::Convention qw/naming renaming/;
+    my $name = naming( 'foo', 'bar', 'baz' ) # got foo_bar_baz
+    $name = naming( 'foo', 'bar', 'baz',
+            { convention => 'UpperCamelCase'} ); # got FooBarBaz
+    my $new_name = renaming( 'FooBarBaz' ); # got foo_bar_baz
+    $new_name = renaming( 'FooBarBaz',
+            { convention => 'lowerCamelCase' } ); # got fooBarBaz
+
+
+=head1 DESCRIPTION
+
+This's a simple module for naming and renaming, mostly for identifiers or something like that.
+
+I'm tired of writing renaming sub, so I chose to create this module, wish it can help you too :)
+
 =head2 default_convention
 
 get or set default convention, default is '_'.
@@ -207,33 +234,6 @@ sub renaming {
 
 __END__
 
-=head1 NAME
-
-Text::Naming::Convention - Naming or Renaming( for identifiers, mostly )
-
-
-=head1 VERSION
-
-This document describes Text::Naming::Convention version 0.06
-
-
-=head1 SYNOPSIS
-
-    use Text::Naming::Convention qw/naming renaming/;
-    my $name = naming( 'foo', 'bar', 'baz' ) # got foo_bar_baz
-    $name = naming( 'foo', 'bar', 'baz',
-            { convention => 'UpperCamelCase'} ); # got FooBarBaz
-    my $new_name = renaming( 'FooBarBaz' ); # got foo_bar_baz
-    $new_name = renaming( 'FooBarBaz',
-            { convention => 'lowerCamelCase' } ); # got fooBarBaz
-
-
-=head1 DESCRIPTION
-
-This's a simple module for naming and renaming, mostly for identifiers or something like that.
-
-I'm tired of writing renaming sub, so I chose to create this module, wish it can help you too :)
-
 =head1 DEPENDENCIES
 
 None.
@@ -258,4 +258,6 @@ Copyright 2008-2009 Best Practical Solutions.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
+
+=cut
 
