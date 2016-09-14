@@ -17,6 +17,7 @@ META.yml
 README
 t/00.load.t
 t/01.api.t
-t/kwalitee.t
-t/pod-coverage.t
-t/pod.t
+xt/kwalitee.t
+xt/perlcritic.t
+xt/pod-coverage.t
+xt/pod.t
