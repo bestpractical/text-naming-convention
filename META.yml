@@ -3,9 +3,13 @@ abstract: 'Naming or Renaming( for identifiers, mostly )'
 author:
   - 'sunnavy <sunnavy@bestpractical.com>'
 build_requires:
+  ExtUtils::MakeMaker: 6.36
   Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.36
 distribution_type: module
-generated_by: 'Module::Install version 0.76'
+dynamic_config: 1
+generated_by: 'Module::Install version 1.16'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,6 +19,7 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.06
+version: '0.07'

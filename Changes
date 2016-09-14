@@ -1,5 +1,8 @@
 Revision history for Text-Naming-Convention
 
+0.07   Wed Sep 14 10:46:57 CST 2016
+       mv author tests to xt/
+
 0.06   Wed Nov  4 06:08:34 GMT 2009
        version tweak
 
